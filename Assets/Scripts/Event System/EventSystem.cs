@@ -19,9 +19,10 @@ public class EventSystem : MonoBehaviour
         _playerHealth.OnGetDamage += OnGetDamage;
         _playerHealth.OnGetHeal += OnGetHeal;
         _playerHealth.OnDie += OnDie;
+        _points.OnGetPoints += OnGetPoints;
     }
 
-    
+   
 
     void Update()
     {
@@ -45,9 +46,17 @@ public class EventSystem : MonoBehaviour
         _ui.UpdateSliderLife(_playerHealth.CurrentHealth);
     }
 
+    private void OnGetPoints()
+    {
+        _sound.PlayPointSound();
+        _ui.UpdatePoints(_points.CurrentPoints);
+    }
+
     private void OnDie()
     {
         _sound.PlayDieSound();
+        Destroy(_playerHealth.gameObject);
+        Debug.Log("Player died!!");
     }
     #endregion
 
