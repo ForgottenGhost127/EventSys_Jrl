@@ -3,32 +3,35 @@ using UnityEngine;
 
 public class InputSystem : MonoBehaviour
 {
-    // Crear un control de teclas desde el que lanzamos los eventos, básicamente, mover aquí cualquier
-    // input que controle cualquier evento que sea escuchado por el event system. Este tiene que ser escuchado
-    // por el event system. Añade un Empty y guíate por el esquema de Santiago
-    //En la captura falta en el C de Points AddLevel(no se si int o float).
     #region Properties
+    public event Action DamageInput;
+    public event Action HealInput;
+    public event Action PointsInput;
+    public event Action LevelInput;
     #endregion
 
     #region Fields
+    private KeyCode _damageKey = KeyCode.Space;
+    private KeyCode _healKey = KeyCode.R;
+    private KeyCode _pointKey = KeyCode.T;
+    private KeyCode _levelKey = KeyCode.E;
     #endregion
 
     #region Unity Callbacks
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
-        
+        if (Input.GetKeyUp(_damageKey))
+            DamageInput?.Invoke();
+        if (Input.GetKeyUp(_healKey))
+            HealInput?.Invoke();
+        if (Input.GetKeyUp(_pointKey))
+            PointsInput?.Invoke();
+        if (Input.GetKeyUp(_levelKey))
+            LevelInput?.Invoke();
     }
     #endregion
 
-    #region Public Methods
-    #endregion
-
-    #region Private Methods
-    #endregion
-	
+	//Hola! En la sección Fields, la parte del "= KeyCode. " no estaba puesta. Después de ver en el Inspector que podía
+    //asignar las teclas de forma manual, se me ocurrió cambiarlo a como está ahora para que sea más... automático? No se como describirlo.
+    //También he quitado la Serialización porque no estaba segura de si dejar que se viera en el Inspector o no. 
 }

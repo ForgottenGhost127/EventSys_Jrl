@@ -45,13 +45,6 @@ public class Health : MonoBehaviour
 
     }
 
-    void Update()
-    {
-        if(Input.GetKeyUp(KeyCode.Space))
-            GetDamage(20);
-        if(Input.GetKeyUp(KeyCode.R))
-            GetHeal(10);
-    }
     #endregion
 
     #region Public Methods
@@ -60,6 +53,11 @@ public class Health : MonoBehaviour
         if (!_die)
         {
             CurrentHealth -= damage;
+            if(_die)
+            {
+                return;
+            }
+
             OnGetDamage?.Invoke();
         }
         

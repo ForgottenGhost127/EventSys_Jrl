@@ -6,6 +6,9 @@ public class Points : MonoBehaviour
     #region Properties
     public int CurrentPoints { get; set; }
     public event Action OnGetPoints;
+
+    public int CurrentLevels { get; set; }
+    public event Action OnAddLevels;
     #endregion
 
     #region Fields
@@ -15,13 +18,9 @@ public class Points : MonoBehaviour
     void Start()
     {
         CurrentPoints = 0;
+        CurrentLevels = 0;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyUp(KeyCode.T))
-            AddPoints(55);
-    }
     #endregion
 
     #region Public Methods
@@ -30,9 +29,15 @@ public class Points : MonoBehaviour
         CurrentPoints += pointsToAdd;
         OnGetPoints?.Invoke();
     }
+
+    public void AddLevel(int lvToAdd)
+    {
+        CurrentLevels += lvToAdd;
+        OnAddLevels?.Invoke();
+    }
     #endregion
 
     #region Private Methods
     #endregion
-	
+
 }

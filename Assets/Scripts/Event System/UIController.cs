@@ -11,6 +11,7 @@ public class UIController : MonoBehaviour
     #region Fields
     [SerializeField] private Slider _slider;
     [SerializeField] private TextMeshProUGUI _pointsT;
+    [SerializeField] private TextMeshProUGUI _levelT;
     #endregion
 
     #region Unity Callbacks
@@ -34,6 +35,11 @@ public class UIController : MonoBehaviour
     public void UpdatePoints(int currentPoints)
     {
         _pointsT.text = currentPoints.ToString();
+    }
+
+    public void UpdateLevels(int currentLevel)
+    {
+        _levelT.text = currentLevel.ToString();
     }
     #endregion
 
