@@ -3,9 +3,6 @@ using UnityEngine;
 
 public class SoundController : MonoBehaviour
 {
-    #region Properties
-    #endregion
-
     #region Fields
     [SerializeField] private AudioClip _damageSound;
     [SerializeField] private AudioClip _dieSound;
@@ -46,9 +43,6 @@ public class SoundController : MonoBehaviour
         _audioSource.clip = _dieSound;
         _audioSource.Play();
     }
-    #endregion
-
-    #region Private Methods
     #endregion
 
 }

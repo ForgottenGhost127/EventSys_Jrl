@@ -11,9 +11,6 @@ public class Points : MonoBehaviour
     public event Action OnAddLevels;
     #endregion
 
-    #region Fields
-    #endregion
-
     #region Unity Callbacks
     void Start()
     {
@@ -35,9 +32,6 @@ public class Points : MonoBehaviour
         CurrentLevels += lvToAdd;
         OnAddLevels?.Invoke();
     }
-    #endregion
-
-    #region Private Methods
     #endregion
 
 }

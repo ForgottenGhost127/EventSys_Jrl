@@ -5,25 +5,10 @@ using TMPro;
 
 public class UIController : MonoBehaviour
 {
-    #region Properties
-    #endregion
-
     #region Fields
     [SerializeField] private Slider _slider;
     [SerializeField] private TextMeshProUGUI _pointsT;
     [SerializeField] private TextMeshProUGUI _levelT;
-    #endregion
-
-    #region Unity Callbacks
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
     #endregion
 
     #region Public Methods
@@ -41,9 +26,6 @@ public class UIController : MonoBehaviour
     {
         _levelT.text = currentLevel.ToString();
     }
-    #endregion
-
-    #region Private Methods
     #endregion
 
 }
