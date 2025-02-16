@@ -15,6 +15,7 @@ public class InputSystem : MonoBehaviour
     private KeyCode _healKey = KeyCode.R;
     private KeyCode _pointKey = KeyCode.T;
     private KeyCode _levelKey = KeyCode.E;
+    
     #endregion
 
     #region Unity Callbacks
@@ -28,6 +29,8 @@ public class InputSystem : MonoBehaviour
             PointsInput?.Invoke();
         if (Input.GetKeyUp(_levelKey))
             LevelInput?.Invoke();
+        
+
     }
     #endregion
 

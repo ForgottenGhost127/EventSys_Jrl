@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class EventSystem : MonoBehaviour
 {
-    //A Santiago no se le escucha el audio de cuando moría el player, solo el audio de que recibía daño. No se si se dió cuenta.
-
+    
     #region Fields
     [SerializeField] private Points _points;
     [SerializeField] private Health _playerHealth;
@@ -62,24 +61,28 @@ public class EventSystem : MonoBehaviour
     {
         _sound.PlayDamageSound();
         _ui.UpdateSliderLife(_playerHealth.CurrentHealth);
+        Debug.Log("Oh, no! Player was attacked and lost 20 health points!");
     }
 
     private void OnGetHeal()
     {
         _sound.PlayHealSound();
         _ui.UpdateSliderLife(_playerHealth.CurrentHealth);
+        Debug.Log("Player recovered 10 health points!");
     }
 
     private void OnGetPoints()
     {
         _sound.PlayPointSound();
         _ui.UpdatePoints(_points.CurrentPoints);
+        Debug.Log("Player gained 30 points!");
     }
 
     private void OnAddLevels()
     {
         _sound.PlayPointSound();
         _ui.UpdateLevels(_points.CurrentLevels);
+        Debug.Log("Player obtained 1 level!");
     }
 
     private void OnDie()
