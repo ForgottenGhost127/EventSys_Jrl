@@ -55,6 +55,8 @@ public class UIControl : MonoBehaviour
             usableItem.Use();
             if (_currentItemSelected.CurrentItem is IConsumable)
                 Consume(_currentItemSelected);
+            else
+                print("No funciona");
         }
     }
 

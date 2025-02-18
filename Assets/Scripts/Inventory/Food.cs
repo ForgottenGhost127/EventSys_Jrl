@@ -6,7 +6,7 @@ namespace Inventory
     public interface IConsumable { }
 
     [Serializable]
-    public class Food : Items, IUsable, ISellable
+    public class Food : Items, IUsable, ISellable, IConsumable
     {
         #region Properties
         [field: SerializeField] public float HealPoints { get; set; }
