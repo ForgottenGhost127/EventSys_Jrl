@@ -13,7 +13,7 @@ namespace Inventory
         #region Public Methods
         public void Attack()
         {
-            Debug.Log("Do Attack");
+            Debug.Log("You attacked!");
         }
 
         public void Use()
