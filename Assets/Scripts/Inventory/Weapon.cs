@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Inventory
 {
     [Serializable]
-    public class Weapon : Items, IUsable
+    public class Weapon : Items, IUsable, IConsumable
     {
         #region Properties
         [field: SerializeField] public float Damage { get; set; }
